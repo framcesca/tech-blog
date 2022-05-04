@@ -1,0 +1,451 @@
+*{
+    margin: 0px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: white;
+}
+
+.jc-center{
+    /* centeral centro, flex-start mette tutto a sx, flex-end mette tutto a dx */
+    justify-content: center;
+}
+
+/* flex-start mette tutto a sx, è quello di defualt */
+.jc-start{
+    justify-content: flex-start;
+}
+
+/* flex-start mette tutto a dx */
+.jc-end{
+    justify-content: flex-end;
+}
+
+/* divide equamente spazio tra gle elementi ed elementi gli estremi a sx e dx */
+.jc-between{
+    justify-content: space-between;
+}
+
+/* mette equamente lo stesso spazio a dx e sx di ogni elemento */
+.jc-around{
+    justify-content: space-around;
+}
+
+/* spazio diviso in modo pari  */
+.jc-evenly{
+    justify-content: space-evenly;
+}
+
+.ai-center{
+    /* centeral centro, flex-start mette tutto a sx, flex-end mette tutto a dx */
+    align-items: center;
+}
+
+/* flex-start mette tutto a sx, è quello di defualt */
+.ai-start{
+    align-items: flex-start;
+}
+
+/* flex-start mette tutto a dx */
+.ai-end{
+    align-items: flex-end;
+}
+
+/* divide equamente spazio tra gle elementi ed elementi gli estremi a sx e dx */
+.ai-between{
+    align-items: space-between;
+}
+
+/* mette equamente lo stesso spazio a dx e sx di ogni elemento */
+.ai-around{
+    align-items: space-around;
+}
+
+/* spazio diviso in modo pari  */
+.ai-evenly{
+    align-items: space-evenly;
+}
+
+.fc{
+    flex-direction: column;
+}
+
+.fr{
+    flex-direction: row;
+}
+
+/* concatenazione display: flex e media-query ottengo un contenuto responsive (si adatta al dispositivo autonomamente */
+/* creo classi che gestiscano le dimensioni */
+.w_20{
+    width: 20%;
+}
+
+.w_33{
+    width: 33%;
+}
+
+.w_40{
+    width: 40%;
+}
+
+.w_50{
+    width: 50%;
+}
+
+.w_60{
+    width: 60%;
+}
+
+.w_66{
+    width: 66%;
+}
+
+.w_80{
+    width: 80%;
+}
+
+.w_100{
+    width: 100%;
+}
+
+/* le media query non possono andare dentro una classe, per questo è bene fare classi generiche */
+/* conviene metterli in file separati */
+/* min-width=superato il valore indicato, succede quanto indicato sotto */
+/* creo classi che facciano effetto solo da questa dimensione */
+@media screen and (min-width: 465px) {
+    .container{
+        width: 464px;
+        
+    }
+
+    .w-sm-20{
+        width: 20%;
+    }
+    
+    .w-sm-33{
+        width: 33%;
+    }
+    
+    .w-sm-40{
+        width: 40%;
+    }
+    
+    .w-sm-50{
+        width: 50%;
+    }
+    
+    .w-sm-60{
+        width: 60%;
+    }
+    
+    .w-sm-66{
+        width: 66%;
+    }
+    
+    .w-sm-80{
+        width: 80%;
+    }
+    
+    .w-sm-100{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .container{
+        width: 767px;
+        
+    }
+
+    .w-md-20{
+        width: 20%;
+    }
+    
+    .w-md-33{
+        width: 33%;
+    }
+    
+    .w-md-40{
+        width: 40%;
+    }
+    
+    .w-md-50{
+        width: 50%;
+    }
+    
+    .w-md-60{
+        width: 60%;
+    }
+    
+    .w-md-66{
+        width: 66%;
+    }
+    
+    .w-md-80{
+        width: 80%;
+    }
+    
+    .w-md-100{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    
+    .container{
+        width: 1199px;
+        
+    }
+
+    .w-lg-20{
+        width: 20%;
+    }
+    
+    .w-lg-33{
+        width: 33%;
+    }
+    
+    .w-lg-40{
+        width: 40%;
+    }
+    
+    .w-lg-50{
+        width: 50%;
+    }
+    
+    .w-lg-60{
+        width: 60%;
+    }
+    
+    .w-lg-66{
+        width: 66%;
+    }
+    
+    .w-lg-80{
+        width: 80%;
+    }
+    
+    .w-lg-100{
+        width: 100%;
+    }
+}
+
+/* analogamente potrei fare anche con justufy, align,  */
+
+.df{
+    display: flex;
+}
+
+
+
+/* APPROCCIO NUCLEARE: CLASSI GENERICHE (flex,align, background, justify, media)  da mettere in class="" piuttosto che classi per ogni sezione*/
+
+
+/* container: blocco, wrapper */
+/* div => block =>  */
+.container{
+    /* di default width: 100%, guarda i media query per dimensioni in base allo shermo*/
+    /* width: 100%; */
+    /* il margin auto serve per impedire che le impostazioni del browser interferiscano con i margini da noi assegnati (di default va a sx)
+ */
+    margin: auto;
+
+}
+
+
+body{
+    margin: 0px;
+    background-color: #121622;
+}
+
+
+h1{
+    margin: auto;
+    padding: 100px;
+    font-style: 700;
+    font-size: 48px;
+    color: #FFF;
+}
+
+/* NAVBAR 1: IN BASSO, ICONE ROTONDE SI COLORANO ALL'HOVER */
+nav{
+    position: fixed;
+    /* lo voglio in basso */
+    bottom: 10px;
+    
+    /* per sopra: di default va sopra al resto della pagina*/
+    /* top: 0px; */
+    width: 100%;
+    height: 75px;
+    /* zindex molto grande, altrimenti il testo potrebbe andare sopra la navbar e non va bene */
+    z-index: 999;
+    /* border-top: 1px solid darkgreen; */
+    /* background-color: white; */
+    /* cebtro, le voice */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    /* perché conterrà figli */
+    position: relative;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 240px;
+    height: 40px;
+    box-shadow: 29.5396px 52.2246px 80px #000000, 11.3782px 20.1162px 25.4815px rgba(0, 0, 0, 0.607407), 2.40693px 4.25534px 6.51852px rgba(0, 0, 0, 0.392593);
+    border-radius: 60px;
+    display: flex;
+    
+    /* per non far andare lo slider al di fuori del menu */
+    overflow: hidden;
+    background-color: #121622;
+}
+
+/* figli di menu */
+.menu a.item{
+    height: 40px;
+    /* intervengo sugli item: è il flex che lavora */
+    width: 60px;
+    
+    display: inline-flex;
+    justify-content: center;
+    /* centro il testo nel cintenitore */
+    align-items: center;
+    z-index: 1;
+    text-decoration: none;
+    color: #FFF;
+    transition: 0.4s;
+    transition-delay: 0.4s;
+    /* non serve più, ho messo align-items text-align: center; */
+}
+
+/* icone arcobaleno su hover */
+.menu a.item:hover{
+
+    /*  per gradient text, colore gradient per icone preso da stackoverflow */
+    /* background: -webkit-gradient(linear, left top, left bottom, from(#f00), to(#333)); */
+    background-image: linear-gradient(216.79deg, #00B2FF 0%, #FA00FF 100%);
+    /* rende background solo del testo */
+	-webkit-background-clip: text;
+    /* rende testo trasparente e si vede il background*/
+	-webkit-text-fill-color: transparent;
+    
+    /* per scala icone */
+    /* transform: scale(1.3); */
+}
+
+
+/* prova per dopo click */
+/* #toggler:checked ~ .icon{
+    /* a scomparsa */
+    /* left: -100%; */
+    /* left: 0%;
+
+} */
+
+/* lavoreremo più sul label */
+/* .togglerLabel{
+    color: white;
+    font-size: 36px; */
+    /* se il parent, in questo caso nav, è posizionato fixed */
+    /* position: absolute;
+    top: 14px;
+    left: 20px;
+    transition: 1s;
+} */ 
+
+
+/* per bordo gradient */
+
+
+.card{
+    /* flex: ; */
+    flex-wrap: wrap;
+    top: -150px;
+    text-decoration: none;
+    width: fit-content;
+    height: fit-content;
+    /* width:305px; */
+    /* height: 355px; */
+    background-color: #121622;
+    
+    padding: 0px;
+    color: white;
+    
+    /* bordo */
+    /* non va */
+    /* border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(216.79deg, #00B2FF 0%, #FA00FF 100%) border-box; 
+    border-radius: 20px; */
+
+    /* oppure VA!!! */
+    background: 
+    /* linear-gradient(var(--color-bg), var(--color-bg)) padding-box, */
+    linear-gradient(#121622, #121622) padding-box,
+    linear-gradient(216.79deg, #00B2FF 0%, #FA00FF 100%) border-box;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    box-shadow: 29px 52px 80px #000000, 11px 20px 25px rgba(0, 0, 0, 0.6), 2px 4px 6px rgba(0, 0, 0, 0.4);
+    transition: 0.4s;
+
+}
+
+/* .text-card{
+    
+} */
+
+img{
+    border-radius: 30px;
+}
+
+.card:hover{
+    box-shadow: none;
+    
+    opacity: 0.5;
+}
+
+.card-2{
+    flex-wrap: wrap;
+    top: -150px;
+    text-decoration: none;
+    width: fit-content;
+    height: fit-content;
+    /* width:305px; */
+    /* height: 355px; */
+    background-color: #121622;
+    
+    padding: 0px;
+    color: white;
+    background: 
+    /* linear-gradient(var(--color-bg), var(--color-bg)) padding-box, */
+    linear-gradient(#121622, #121622) padding-box,
+    linear-gradient(216.79deg, #00B2FF 0%, #FA00FF 100%) border-box;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    box-shadow: 29px 52px 80px #000000, 11px 20px 25px rgba(0, 0, 0, 0.6), 2px 4px 6px rgba(0, 0, 0, 0.4);
+
+    margin: 100px;
+    margin-top: 200px;
+    margin-left: 200px;
+
+}
+
+ul {
+    margin: 100px;
+}
+
+h2{
+    padding-top: 10px;
+    padding-bottom: 7px;
+}
+
+p{
+    line-height: 25px;
+}
+
+.description{
+    margin-bottom: 100px;
+}
